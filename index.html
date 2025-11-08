@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Collaborator Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-microscope"></i> Research Collaborator Platform</h1>
+            <nav class="nav-buttons">
+                <button id="collaboratorBtn" class="nav-btn active">🤝 Collaborate with Researchers</button>
+                <button id="researcherBtn" class="nav-btn">🔬 I'm a Researcher</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Collaborator Section -->
+        <div id="collaboratorSection" class="section">
+            <div id="collaboratorAuth" class="auth-container">
+                <div class="auth-tabs">
+                    <button id="collabSigninTab" class="tab-btn active">Sign In</button>
+                    <button id="collabRegisterTab" class="tab-btn">Register</button>
+                </div>
+                
+                <!-- Collaborator Sign In -->
+                <div id="collabSigninForm" class="form-section">
+                    <h2>🤝 Collaborator Sign In</h2>
+                    <input type="email" id="collabEmail" placeholder="Email">
+                    <input type="password" id="collabPassword" placeholder="Password">
+                    <button id="collabSigninBtn">Sign In</button>
+                </div>
+                
+                <!-- Collaborator Registration -->
+                <div id="collabRegisterForm" class="form-section hidden">
+                    <h2>🤝 Join as Collaborator</h2>
+                    <input type="text" id="collabName" placeholder="Your Name">
+                    <input type="email" id="collabRegEmail" placeholder="Email">
+                    <input type="password" id="collabRegPassword" placeholder="Password">
+                    <input type="text" id="collabOrg" placeholder="Organization">
+                    <textarea id="collabProject" placeholder="Project Idea"></textarea>
+                    <input type="text" id="collabBudget" placeholder="Budget Range">
+                    <input type="text" id="collabFields" placeholder="Interested Fields (comma-separated)">
+                    <button id="collabRegisterBtn">Register</button>
+                </div>
+            </div>
+            
+            <!-- Researcher Browse Section -->
+            <div id="researcherBrowse" class="browse-section hidden">
+                <div class="browse-header">
+                    <h2>🔍 Browse Researchers</h2>
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search by name, field, or skills...">
+                        <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <div id="researcherGrid" class="researcher-grid">
+                    <!-- Researcher cards will be populated here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Researcher Section -->
+        <div id="researcherSection" class="section hidden">
+            <div id="researcherAuth" class="auth-container">
+                <div class="auth-tabs">
+                    <button id="resSigninTab" class="tab-btn active">Sign In</button>
+                    <button id="resRegisterTab" class="tab-btn">Register</button>
+                </div>
+                
+                <!-- Researcher Sign In -->
+                <div id="resSigninForm" class="form-section">
+                    <h2>🔬 Researcher Sign In</h2>
+                    <input type="email" id="resEmail" placeholder="Email">
+                    <input type="password" id="resPassword" placeholder="Password">
+                    <button id="resSigninBtn">Sign In</button>
+                </div>
+                
+                <!-- Researcher Registration -->
+                <div id="resRegisterForm" class="form-section hidden">
+                    <h2>🔬 Join as Researcher</h2>
+                    <div class="form-grid">
+                        <input type="text" id="resName" placeholder="Full Name">
+                        <input type="email" id="resRegEmail" placeholder="Email">
+                        <input type="password" id="resRegPassword" placeholder="Password">
+                        <input type="text" id="resInstitution" placeholder="Institution">
+                        
+                        <select id="resField">
+                            <option value="">Select Research Field</option>
+                            <option value="AI">Artificial Intelligence</option>
+                            <option value="PHYSICS">Physics</option>
+                            <option value="SCIENCE">General Science</option>
+                            <option value="ML">Machine Learning</option>
+                            <option value="CLOUD">Cloud Computing</option>
+                            <option value="AEROSPACE">Aerospace</option>
+                            <option value="BIOTECHNOLOGY">Biotechnology</option>
+                            <option value="CHEMISTRY">Chemistry</option>
+                            <option value="MATHEMATICS">Mathematics</option>
+                            <option value="ROBOTICS">Robotics</option>
+                        </select>
+                        
+                        <input type="text" id="resExperience" placeholder="Years of Experience">
+                        <input type="text" id="resLocation" placeholder="Location">
+                        <input type="tel" id="resContact" placeholder="Contact Number">
+                    </div>
+                    
+                    <input type="text" id="resProjectTitle" placeholder="Current Project Title">
+                    <textarea id="resProjectDesc" placeholder="Project Description"></textarea>
+                    <input type="text" id="resSkills" placeholder="Skills (comma-separated)">
+                    
+                    <button id="resRegisterBtn">Register as Researcher</button>
+                </div>
+            </div>
+            
+            <!-- Researcher Dashboard -->
+            <div id="researcherDashboard" class="dashboard hidden">
+                <h2>🔬 Researcher Dashboard</h2>
+                <div id="researcherProfile" class="profile-card"></div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Researcher Detail Modal -->
+    <div id="researcherModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+    
+    <div id="errorMessage" class="message error hidden"></div>
+    <div id="successMessage" class="message success hidden"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
